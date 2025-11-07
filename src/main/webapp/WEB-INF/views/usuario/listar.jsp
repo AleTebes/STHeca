@@ -28,9 +28,9 @@
             <c:forEach items="${usuarios}" var="u">
                 <tr>
                     <td class="text-center" style="font-weight:600;">${u.id}</td>
-                    <td>${u.nombre}</td>
-                    <td>${u.email}</td>
-                    <td>${u.rol}</td>
+                    <td class="text-center" style="font-weight:600;">${u.nombre}</td>
+                    <td class="text-center" style="font-weight:600;">${u.email}</td>
+                    <td class="text-center" style="font-weight:600;">${u.rol}</td>
                     <td class="text-center">
                         <a href="${pageContext.request.contextPath}/usuario?action=editar&id=${u.id}" class="btn btn-sm" style="background-color:#007bff;color:white;border-radius:8px;">Editar</a>
                         <a href="${pageContext.request.contextPath}/usuario?action=eliminar&id=${u.id}" class="btn btn-sm" style="background-color:#dc3545;color:white;border-radius:8px;" onclick="return confirm('Eliminar usuario?')">Eliminar</a>

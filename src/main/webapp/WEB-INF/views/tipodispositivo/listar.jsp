@@ -29,8 +29,8 @@
             <c:forEach items="${tipos}" var="t">
                 <tr>
                     <td class="text-center" style="font-weight:600;">${t.id}</td>
-                    <td>${t.nombre}</td>
-                    <td>${t.descripcion}</td>
+                    <td class="text-center" style="font-weight:600;">${t.nombre}</td>
+                    <td class="text-center" style="font-weight:600;">${t.descripcion}</td>
                     <td class="text-center">
                         <a href="${pageContext.request.contextPath}/tipodispositivo?action=editar&id=${t.id}" class="btn btn-sm" style="background-color:#007bff;color:white;border-radius:8px;">Editar</a>
                         <a href="${pageContext.request.contextPath}/tipodispositivo?action=eliminar&id=${t.id}" class="btn btn-sm" style="background-color:#dc3545;color:white;border-radius:8px;" onclick="return confirm('¿Eliminar tipo?')">Eliminar</a>

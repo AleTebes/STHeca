@@ -17,15 +17,15 @@ public class InicializarDatos {
 
             if (!existing.contains("usuarios")) {
                 db.createCollection("usuarios");
-                System.out.println("ℹ️ Colección 'usuarios' creada vacía");
+                System.out.println(" Colección 'usuarios' creada vacía");
             }
             if (!existing.contains("dispositivos")) {
                 db.createCollection("dispositivos");
-                System.out.println("ℹ️ Colección 'dispositivos' creada vacía");
+                System.out.println(" Colección 'dispositivos' creada vacía");
             }
             if (!existing.contains("tickets")) {
                 db.createCollection("tickets");
-                System.out.println("ℹ️ Colección 'tickets' creada vacía");
+                System.out.println(" Colección 'tickets' creada vacía");
             }
 
             MongoCollection<Document> usuarios = db.getCollection("usuarios");

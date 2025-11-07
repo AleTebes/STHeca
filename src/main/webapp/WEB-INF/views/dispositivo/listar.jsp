@@ -29,8 +29,8 @@
             <c:forEach items="${dispositivos}" var="d">
                 <tr>
                     <td class="text-center" style="font-weight:600;">${d.id}</td>
-                    <td>${d.nombre}</td>
-                    <td>${d.tipo.nombre}</td>
+                    <td class="text-center" style="font-weight:600;">${d.nombre}</td>
+                    <td class="text-center" style="font-weight:600;">${d.tipo.nombre}</td>
                     <td class="text-center">
                         <a href="${pageContext.request.contextPath}/dispositivo?action=editar&id=${d.id}" class="btn btn-sm" style="background-color:#007bff;color:white;border-radius:8px;">Editar</a>
                         <a href="${pageContext.request.contextPath}/dispositivo?action=eliminar&id=${d.id}" class="btn btn-sm" style="background-color:#dc3545;color:white;border-radius:8px;" onclick="return confirm('¿Eliminar dispositivo?')">Eliminar</a>

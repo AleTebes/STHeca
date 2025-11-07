@@ -31,17 +31,13 @@
             <c:forEach items="${tickets}" var="t">
                 <tr>
                     <td class="text-center" style="font-weight:600;">${t.id}</td>
-                    <td>${t.titulo}</td>
-                    <td>${t.estado}</td>
-                    <td>
-                        <c:if test="${not empty t.dispositivo}">
-                            ${t.dispositivo.id} - ${t.dispositivo.nombre}
-                        </c:if>
+                    <td class="text-center" style="font-weight:600;">${t.titulo}</td>
+                    <td class="text-center" style="font-weight:600;">${t.estado}</td>
+                    <td class="text-center" style="font-weight:600;">
+                        <c:if test="${not empty t.dispositivo}">${t.dispositivo.nombre}</c:if>
                     </td>
-                    <td>
-                        <c:if test="${not empty t.usuario}">
-                            ${t.usuario.id} - ${t.usuario.nombre}
-                        </c:if>
+                    <td  class="text-center" style="font-weight:600;">
+                        <c:if test="${not empty t.usuario}">${t.usuario.nombre}</c:if>
                     </td>
                     <td class="text-center">
                         <a href="${pageContext.request.contextPath}/ticket?action=editar&id=${t.id}" class="btn btn-sm" style="background-color:#007bff;color:white;border-radius:8px;">Editar</a>
