@@ -33,6 +33,11 @@ public class TicketServerlet extends HttpServlet {
         if (action == null) { action = "listar"; }
         switch (action) {
             case "listar":
+                // añadir información sobre si existen dispositivos para controlar el modal en la UI
+                DispositivoDAO dispDaoList = new DispositivoDAO(db);
+                List<Dispositivo> dispositivosList = dispDaoList.listar();
+                boolean hasDispositivos = dispositivosList != null && !dispositivosList.isEmpty();
+                req.setAttribute("hasDispositivos", hasDispositivos);
                 req.setAttribute("tickets", dao.listar());
                 req.getRequestDispatcher("/WEB-INF/views/ticket/listar.jsp").forward(req, resp);
                 break;
@@ -42,6 +47,15 @@ public class TicketServerlet extends HttpServlet {
                 UsuarioDAO userDao = new UsuarioDAO(db);
                 List<Dispositivo> dispositivos = dispDao.listar();
                 List<Usuario> usuarios = userDao.listar();
+
+                // Si no hay dispositivos, pedir que se cree uno antes de permitir crear ticket
+                if (dispositivos == null || dispositivos.isEmpty()) {
+                    req.setAttribute("usuarios", usuarios);
+                    req.setAttribute("mensaje", "No existen dispositivos. Debe crear al menos un dispositivo antes de crear un ticket.");
+                    req.getRequestDispatcher("/WEB-INF/views/dispositivo/crear.jsp").forward(req, resp);
+                    break;
+                }
+
                 req.setAttribute("dispositivos", dispositivos);
                 req.setAttribute("usuarios", usuarios);
                 req.getRequestDispatcher("/WEB-INF/views/ticket/agregar.jsp").forward(req, resp);

@@ -10,7 +10,6 @@ import jakarta.servlet.http.*;
 import com.mongodb.client.MongoDatabase;
 
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet(name = "DispositivoServerlet", urlPatterns = {"/dispositivo"})
 public class DispositivoServerlet extends HttpServlet {
