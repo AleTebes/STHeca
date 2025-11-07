@@ -3,8 +3,7 @@
 <html>
 <head>
     <title>Tipos de Dispositivo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/CSS/estilos.css" rel="stylesheet">
+    <%@ include file="/includes/header.jsp" %>
 </head>
 <body class="d-flex flex-column min-vh-100" style="background-color:#e6f7ff;">
 <jsp:include page="/WEB-INF/views/partials/navbar.jsp" />
@@ -45,4 +44,3 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-

@@ -6,18 +6,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - STHeca</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/CSS/estilos.css" rel="stylesheet">
+    <%@ include file="/includes/header.jsp" %>
 </head>
 <body class="d-flex flex-column min-vh-100" style="background-color: #e6f7ff;">
 
-<div class="container mt-5 p-4 shadow-sm" style="background-color:#99ddff;border-radius:15px;">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="card-title text-center">Iniciar sesión</h3>
-
+<!-- Contenedor centrado similar al resto del sitio -->
+<div class="container flex-grow-1 d-flex align-items-center justify-content-center py-5">
+    <div class="row w-100 justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow-sm" style="border-radius:12px; overflow:hidden;">
+                <div class="p-4" style="background-color:#99ddff;">
+                    <div class="text-center mb-3">
+                        <img src="${pageContext.request.contextPath}/images/STH.png"
+                             alt="Logo STHeca"
+                             style="width:100px; border-radius:8px;">
+                    </div>
+                    <h3 class="text-center fw-bold mb-2">Iniciar sesión</h3>
+                    <p class="text-center text-muted mb-0">Ingresa tu correo y contraseña</p>
+                </div>
+                <div class="card-body p-4" style="background-color:white;">
                     <c:if test="${not empty error}">
                         <div class="alert alert-danger" role="alert">${error}</div>
                     </c:if>
@@ -25,24 +32,24 @@
                     <form action="${pageContext.request.contextPath}/login" method="post">
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
+                            <input type="email" class="form-control rounded-3" id="email" name="email" required autofocus>
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="password" name="password" required>
+                            <input type="password" class="form-control rounded-3" id="password" name="password" required>
                         </div>
                         <div class="d-grid">
-                            <button type="submit" class="btn btn-primary">Entrar</button>
+                            <button type="submit" class="btn btn-primary btn-lg rounded-3">Entrar</button>
                         </div>
                     </form>
+
                 </div>
             </div>
-            <div class="text-center mt-3">
-                <small>Usuario de prueba: admin@sth.local / admin</small>
-            </div>
+
         </div>
     </div>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

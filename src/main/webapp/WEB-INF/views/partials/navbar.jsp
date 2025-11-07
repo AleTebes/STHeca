@@ -4,7 +4,11 @@
          style="background-color: #99ddff; border-radius: 15px;">
         <div class="container-fluid">
             <a class="navbar-brand fw-bold fs-4 text-uppercase" href="${pageContext.request.contextPath}/menu">
-                STHeca
+                <img src="${pageContext.request.contextPath}/images/STH.png"
+                     alt="Logo STHeca"
+                     width="60" height="60"
+                     class="d-inline-block align-text-top me-2"
+                     style="border-radius: 5px;">
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

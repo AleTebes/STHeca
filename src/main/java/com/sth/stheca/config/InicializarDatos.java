@@ -52,6 +52,16 @@ public class InicializarDatos {
                 System.out.println("ℹ️ Usuario admin ya existe, no se inserta");
             }
 
+            // Eliminar cualquier usuario llamado "Alexander" para evitar que aparezca en la app
+            try {
+                long removed = usuarios.deleteMany(new Document("nombre", "Alexander")).getDeletedCount();
+                if (removed > 0) {
+                    System.out.println("ℹ️ Se eliminaron " + removed + " documentos con nombre 'Alexander' durante la inicialización");
+                }
+            } catch (Exception ex) {
+                System.err.println("Error al eliminar usuarios 'Alexander': " + ex.getMessage());
+            }
+
             // Las colecciones 'dispositivos' y 'tickets' quedan vacías (si fueron creadas arriba)
             System.out.println("✅ Inicialización mínima completada: colecciones disponibles y admin garantizado");
 
