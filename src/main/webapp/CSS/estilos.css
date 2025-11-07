@@ -1,0 +1,33 @@
+body {
+    background-color: #f8f9fa;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 40px;
+}
+
+.rectangulo-redondeado {
+    width: 250px;              /* ancho */
+    height: 120px;             /* alto */
+    background-color: #0d6efd; /* color */
+    border-radius: 20px;       /* esquinas redondeadas */
+    margin: 20px auto;
+}
+
+/* Clases para aplicar el estilo del contenedor del menú */
+.app-body {
+    background-color: #e6f7ff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.app-container {
+    background-color: #99ddff;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+.menu-card {
+    background-color: #99ddff;
+    border-radius: 15px;
+}
+.menu-btn { border-radius: 10px !important; }
